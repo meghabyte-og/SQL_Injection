@@ -1,6 +1,4 @@
 # sql-injection
-# SQL Injection Attack Demo
-
 Demonstration of a SQL injection attack performed on a vulnerable website. Please note that the website used for this demonstration was created for educational purposes and with proper authorization.
 
 ## Table of Contents
