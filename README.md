@@ -34,15 +34,15 @@ SELECT * FROM users WHERE username = '$input_username' AND password = '$input_pa
 2. SQL Injection attempt:
    To check if the website is vulnerable to SQL injection, I tested the following:
    - Username: admin'
-   - Result: Syntax error. Encountered "password" at line 1, column 67.
-   **Explanation**: The SQL query is now structured as
+   - Result: Syntax error. Encountered "password" at line 1, column 67. <br>
+   **Explanation**: The SQL query is now structured as 
      SELECT * FROM users WHERE username = 'admin'' AND password = 'password'
      giving the above error.
 
 4. Successful SQL Injection:
    - Username: admin' OR '1'='1
    - Password: you can use any password
-   - Result: Successfully logged in
+   - Result: Successfully logged in <br>
    **Explanation**: The SQL query is now structured as
      SELECT * FROM users WHERE username = 'admin' OR '1'='1' AND password = '$input_password'
      Due to the order of precedence for SQL queries, and because '1'='1' is always true, the I could effectively bypass the password check and gain unauthorized access.
@@ -50,7 +50,7 @@ SELECT * FROM users WHERE username = '$input_username' AND password = '$input_pa
 5. Comment Injection:
    - Username: admin'--
    - Password: you can use any password
-   - Result: Successfully logged in
+   - Result: Successfully logged in <br>
    **Explanation**: The SQL query is now structured as
      SELECT * FROM users WHERE username = 'admin' <span style="color:pink">-- AND password = 'password' </span>
      The password is now not considered as that part of the query is a comment. So, I could effectively bypass the password check and gain unauthorized access.
