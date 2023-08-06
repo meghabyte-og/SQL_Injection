@@ -52,7 +52,7 @@ SELECT * FROM users WHERE username = '$input_username' AND password = '$input_pa
    - Password: you can use any password
    - Result: Successfully logged in <br>
    **Explanation**: The SQL query is now structured as
-     SELECT * FROM users WHERE username = 'admin' <span style="color:pink">-- AND password = 'password' </span>
+     SELECT * FROM users WHERE username = 'admin' <span style="color:red">-- AND password = 'password' </span>
      The password is now not considered because that part of the query is a comment. So, I could effectively bypass the password check and gain unauthorized access.
      
 ## Usage
